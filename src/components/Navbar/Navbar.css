@@ -1,0 +1,12 @@
+.bg {
+    background-color: #4600af;
+}
+
+.bg span {
+    color: #fff;
+    float: left;
+}
+
+.bg > ul {
+    color:  #fff;
+}
