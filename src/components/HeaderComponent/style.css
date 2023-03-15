@@ -1,13 +1,19 @@
-.header-content {
-  min-height: 75vh;
-  background: linear-gradient(rgba(141, 39, 174, 0.3));
-}
 .header-title {
-  font-size: 4.2rem;
+  font-size: 3.5rem;
+}
+.header-content {
+  margin-left: 3rem;
+  text-align: center;
 }
 .header-text {
-  margin-top: -1.8rem;
+  margin-top: 1.8rem;
   margin-bottom: 2.8rem;
-  opacity: 0.8;
-  max-width: 770px;
+  max-width: 700px;
+  text-align: center;
+}
+@media screen and (max-width: 550px) {
+  .holder{
+    margin-right: 11px;
+    text-align: center;
+  }
 }
