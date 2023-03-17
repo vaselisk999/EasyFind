@@ -4,9 +4,9 @@ import Search from "../SearchComponent/index";
 
 const index = () => {
   return (
-    <div class="container-sm">
-      <div class="row align-items-start">
-        <div class="col">
+    <div className="container-sm">
+      <div className="row align-items-start">
+        <div className="col">
           <h2 className="header-title text-capitalize mt-4">
               find your book of choice.
             </h2>

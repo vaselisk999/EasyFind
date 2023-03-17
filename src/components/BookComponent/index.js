@@ -21,7 +21,7 @@ export default function BookComponent({ volumeInfo }) {
                     <div className="bookimg">book is not provided</div>
                 }
                 {/* adds to wishlist hyperlink */}
-                <a href="javascript:void(0);" className="btnaddtowishlist">
+                <a href="/#" className="btnaddtowishlist">
                     <span>add to wishlist</span>
                 </a>
             </div>

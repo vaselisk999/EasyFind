@@ -1,8 +1,7 @@
 import "./App.css";
-// import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter as Router,  Route, Routes } from "react-router-dom";
-import Header from "./components/HeaderComponent/index";
-import About  from "./components/HomePageComponent/index";
+import HomePageComponent from "./components/HomePageComponent";
+import AboutPageComponent  from "./components/AboutPageComponent";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
@@ -12,8 +11,8 @@ function App() {
         <div className="pages">
           <Navbar/>
           <Routes>
-            <Route path="/" element={<Header />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/" element={<HomePageComponent />} />
+            <Route path="/about" element={<AboutPageComponent />} />
           </Routes>
         </div>
       </Router>
