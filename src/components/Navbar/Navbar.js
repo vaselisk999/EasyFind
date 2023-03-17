@@ -1,57 +1,38 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useRef } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
-// import FaBars from "@fortawesome/react-fontawesome";
-// import FaTimes from "@fortawesome/react-fontawesome";
+import {Link} from "react-router-dom";
 
-function NavBar() {
-  const [click, setClick] = useState(false);
 
-  const handleClick = () => setClick(!click);
-  return (
-    <>
-      <nav className="navbar">
-        <div className="nav-container">
-          <NavLink exact to="/" className="nav-logo py-lg-0">
-            EasyFind
-            {/* <i className="fas fa-code"></i> */}
-          </NavLink>
 
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/"
-                style={(isActive) => ({
-                  color: isActive ? "green" : "blue",
-                })}
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/about"
-                style={(isActive) => ({
-                  color: isActive ? "green" : "blue",
-                })}
-                className="nav-links"
-                onClick={handleClick}
-              >
-                About
-              </NavLink>
-            </li>
-          </ul>
-          <div className="nav-icon" onClick={handleClick}>
-            <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
-          </div>
-        </div>
-      </nav>
-    </>
-  );
+function Navbar() {
+	const navRef = useRef();
+
+	const showNavbar = () => {
+		navRef.current.classList.toggle(
+			"responsive_nav"
+		);
+	};
+
+	return (
+		<header>
+			<h3>EasyFind</h3>
+			<nav ref={navRef}>
+				<Link className="nav-link" to="/">Home</Link>
+				<Link className="nav-link" to="about">About</Link>
+				<button
+					className="nav-btn nav-close-btn"
+					onClick={showNavbar}>
+					<FaTimes />
+				</button>
+			</nav>
+			<button
+				className="nav-btn"
+				onClick={showNavbar}>
+				<FaBars />
+			</button>
+		</header>
+	);
 }
 
-export default NavBar;
+export default Navbar;
