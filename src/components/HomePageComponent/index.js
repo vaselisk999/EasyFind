@@ -1,10 +1,13 @@
 import React from "react";
+import Slide from "./Slide";
+
+
 
 const index = () => {
   return (
-    <div class="container-sm">
-      <div class="row align-items-start align-self-center">
-        <div class="col-8">
+    <div className="container-sm">
+      <div className="row align-items-start align-self-center">
+        <div className="col-10">
           <h2 className="header-title text-capitalize mt-4">
             find your book of choice.
           </h2>
@@ -20,6 +23,7 @@ const index = () => {
             booksellers worldwide, accessing millions of books in just one
             simple step.
           </p>
+          <Slide />
         </div>
       </div>
     </div>
