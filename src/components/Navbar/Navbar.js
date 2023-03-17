@@ -1,34 +1,57 @@
-import React from "react";
-// import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
+// import FaBars from "@fortawesome/react-fontawesome";
+// import FaTimes from "@fortawesome/react-fontawesome";
 
-const Navbar = () => {
+function NavBar() {
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick(!click);
   return (
-    <div className="n-wrapper navbar navbar-expand-lg" id="Navbar">
-      <div className="n-left">
-        <div className="n-name">EasyFind</div>
-      </div>
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="n-right collapse navbar-collapse" id="navbarSupportedContent">
-        <div className="n-list">
-          <ul className="navbar-nav" style={{ listStyleType: "none"}}>
+    <>
+      <nav className="navbar">
+        <div className="nav-container">
+          <NavLink exact to="/" className="nav-logo py-lg-0">
+            EasyFind
+            {/* <i className="fas fa-code"></i> */}
+          </NavLink>
+
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" style={{ textDecoration: "none" }} href="home">
+              <NavLink
+                exact
+                to="/"
+                style={(isActive) => ({
+                  color: isActive ? "green" : "blue",
+                })}
+                className="nav-links"
+                onClick={handleClick}
+              >
                 Home
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" style={{ textDecoration: "none" }} href="/about">
+              <NavLink
+                exact
+                to="/about"
+                style={(isActive) => ({
+                  color: isActive ? "green" : "blue",
+                })}
+                className="nav-links"
+                onClick={handleClick}
+              >
                 About
-              </a>
+              </NavLink>
             </li>
           </ul>
+          <div className="nav-icon" onClick={handleClick}>
+            <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
+          </div>
         </div>
-      </div>
-    </div>
+      </nav>
+    </>
   );
-};
+}
 
-export default Navbar;
+export default NavBar;
