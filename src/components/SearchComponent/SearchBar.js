@@ -1,11 +1,11 @@
 import React from 'react'
 import axios from 'axios'
-import BookComponent from './../BookComponent';
+// import BookComponent from './../BookComponent';
 import './SearchBar.css';
 
 
 
-class BooksList extends React.Component {
+class SearchBar extends React.Component {
     state = {
         bookslist: [],
         input: ''
@@ -66,5 +66,5 @@ class BooksList extends React.Component {
     }
 }
 
-export default BookComponent;
+export default SearchBar;
 

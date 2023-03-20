@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import BooksListComponent from './../BooksListComponent';
-import SearchComponent from "./../SearchComponent";
+import SearchComponent from "./../SearchComponent/SearchBar.js";
 import Slide from './Slide'
 
 
