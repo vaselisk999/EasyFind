@@ -2,6 +2,8 @@ import React from "react";
 import './style.css';
 
 export default function BookComponent({ volumeInfo }) {
+
+    console.log(volumeInfo)
     //cards destructed data
     const { authors, categories, title, imageLinks } = volumeInfo;
 
@@ -25,7 +27,7 @@ export default function BookComponent({ volumeInfo }) {
                     <span>add to wishlist</span>
                 </a>
             </div>
-            <p>{categories.join('')}</p>
+            {/* <p>{categories.join('')}</p> */}
             <hr />
             <h6>{title}</h6>
             <i>by: {authors}</i>
