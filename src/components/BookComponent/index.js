@@ -2,23 +2,33 @@ import React from "react";
 import './style.css';
 
 export default function BookComponent({ volumeInfo }) {
-
-    const { authors, categories, description, maturityRating, publishedDate, publisher, subtitle, title, imageLinks } = volumeInfo;
+    //cards destructed data
+    const { authors, categories, title, imageLinks } = volumeInfo;
 
     return (
         <div className="book-info-wrapper">
-            <h4>{title}</h4>
             <div className="book-thumbnail-wrapper">
-                {imageLinks ? <img className="book-thumbnail" src={imageLinks?.thumbnail} alt="title" /> : null}
+                {imageLinks ?
+                    <div className="bookimg">
+                        <div className="frontcover">
+                            <img className="book-thumbnail" src={imageLinks?.thumbnail} alt={title} />
+                        </div>
+                        <div className="backcover">
+                            <img className="book-thumbnail" src={imageLinks?.thumbnail} alt={title} />
+                        </div>
+                    </div>
+                    :
+                    <div className="bookimg">book is not provided</div>
+                }
+                {/* adds to wishlist hyperlink */}
+                <a href="/#" className="btnaddtowishlist">
+                    <span>add to wishlist</span>
+                </a>
             </div>
-
-            <i>{authors}</i>
-            {subtitle ? <p>{subtitle}</p> : null}
-            <p>categories: {categories.join('')}</p>
-            {/* <p>{maturityRating}</p> */}
-            <p>published: {publishedDate}</p>
-            {/* {publisher ? <p>{publisher}</p> : null} */}
-            {/* {description ? <p>{description}</p> : null} */}
+            <p>{categories.join('')}</p>
+            <hr />
+            <h6>{title}</h6>
+            <i>by: {authors}</i>
         </div>
     )
 }
