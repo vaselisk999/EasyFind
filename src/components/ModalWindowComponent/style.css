@@ -4,11 +4,11 @@
     height: 100vh;
 }
 
-.book-info-wrapper{
+.modal-book-info-wrapper{
     width: calc( 100vw - 700px);
 }
 
-.book-viewrr-wrapper{
+.modal-book-viewer-wrapper{
 
 }
 
