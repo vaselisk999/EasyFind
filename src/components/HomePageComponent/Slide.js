@@ -1,12 +1,12 @@
 import React from "react";
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
-import image1 from "./book.lib.png";
-import image2 from "./book2.png";
-import image3 from "./book3.png";
-import image4 from "./book4.png";
-import image5 from "./book5.png";
-import image6 from "./book6.png";
+import image1 from "./../../assets/images/slider/book.lib.png";
+import image2 from "./../../assets/images/slider/book2.png";
+import image3 from "./../../assets/images/slider/book3.png";
+import image4 from "./../../assets/images/slider/book4.png";
+import image5 from "./../../assets/images/slider/book5.png";
+import image6 from "./../../assets/images/slider/book6.png";
 
 
 const spanStyle = {
@@ -22,8 +22,8 @@ const spanStyle = {
     justifyContent: 'center',
     backgroundSize: 'cover',
     height: '400px',
-    borderRadius: '8px',
-    marginTop: '15px'
+    // borderRadius: '8px',
+    // marginTop: '15px'
   }
 
 const images = [

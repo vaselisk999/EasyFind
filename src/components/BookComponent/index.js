@@ -1,11 +1,23 @@
 import React from "react";
+import { subscriber } from './../../utils/subscriber';
 import './style.css';
+import { getBooksDataByID } from './../../api'
 
-export default function BookComponent({ volumeInfo }) {
-
-    console.log(volumeInfo)
+export default function BookComponent({id, volumeInfo, accessInfo}) {
     //cards destructed data
-    const { authors, categories, title, imageLinks } = volumeInfo;
+    const { authors, categories, title, imageLinks, industryIdentifiers } = volumeInfo;
+
+    
+    // passes the link 
+    const clickOnButton = (link) => {
+        subscriber.clickOnButton(link)
+        
+        console.log(industryIdentifiers.identifier, "8888888888888888888")
+        console.log(id, "8888888888888888888")
+        getBooksDataByID(id, (data) => {
+            console.log(data)
+        })
+    }
 
     return (
         <div className="book-info-wrapper">
@@ -22,15 +34,14 @@ export default function BookComponent({ volumeInfo }) {
                     :
                     <div className="bookimg">book is not provided</div>
                 }
-                {/* adds to wishlist hyperlink */}
-                <a href="/#" className="btnaddtowishlist">
-                    <span>add to wishlist</span>
-                </a>
+                <button type="button" onClick={()=>{clickOnButton(accessInfo.webReaderLink)}} className="btnaddtowishlist">
+                    <span>Read a book</span>
+                </button>
             </div>
-            {/* <p>{categories.join('')}</p> */}
+            <p>{categories ? categories.join("") : null}</p>
             <hr />
             <h6>{title}</h6>
-            <i>by: {authors}</i>
+            {authors ? <i> by: { authors }</i>: null}
         </div>
     )
 }
