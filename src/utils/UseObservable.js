@@ -7,6 +7,6 @@ export default function useObservable(observable, initialValue) {
             setValue(newValue);
         })
         return () => subscription.unsubscribe();
-    }, [])
+    }, [observable])
     return value;
 }

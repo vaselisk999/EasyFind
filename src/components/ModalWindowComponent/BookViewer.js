@@ -36,7 +36,7 @@ const BookViewer = ({number}) => {
                 })
             }
         }
-    }, [loaded])
+    }, [loaded, ISBN_num])
 
     return (
         <div>
