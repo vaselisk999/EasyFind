@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 function Navbar() {
 	const navRef = useRef();
-
+	// toggles class responsive_nav
 	const showNavbar = () => {
 		navRef.current.classList.toggle(
 			"responsive_nav"

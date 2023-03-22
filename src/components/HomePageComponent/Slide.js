@@ -31,7 +31,6 @@ const images = [
   {
     img: image4,
   },
-
   {
     img: image5,
   },

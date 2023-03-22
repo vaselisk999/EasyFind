@@ -8,6 +8,7 @@ const HomePageComponent = () => {
   const [search, setSearch] = useState('');
   const [books, setBooks] = useState({});
 
+  //submit function which gets a list of books by a searching for string
   const handleFormSubmit = event => {
     event.preventDefault();
     if (!search) {
@@ -18,6 +19,7 @@ const HomePageComponent = () => {
     });
   }
 
+  //function handle Input Changes
   const handleInputChange = event => {
     setSearch(event.target.value);
   }

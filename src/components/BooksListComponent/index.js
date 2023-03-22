@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./style.css";
 import BookComponent from './../BookComponent';
+import "./style.css";
 
 export default function BooksListComponent({ books }) {
     const [items, setItems] = useState([]);
@@ -12,6 +12,7 @@ export default function BooksListComponent({ books }) {
     return (
         <section className="books-list-wrapper">
             <div className="books-list-conteiner">
+                {/* runs through the array of books */}
                 {items ? items.map((val, key) => <BookComponent key={key}  {...val} />) : null}
             </div>
         </section>

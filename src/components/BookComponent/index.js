@@ -7,12 +7,12 @@ export default function BookComponent({ id, volumeInfo }) {
     //cards destructed data
     const { authors, title, imageLinks, industryIdentifiers } = volumeInfo;
 
-    // passes the link 
+    // subscriber witch receives parameters after click on button
     const clickOnButton = (number) => {
         subscriber.clickOnButton(number)
     }
 
-
+    // this function truncates long text
     const truncate = (str, length, cut) => {
         return str.length > length ? str.substring(0, cut) + "..." : str;
     }

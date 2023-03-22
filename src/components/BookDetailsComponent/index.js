@@ -6,17 +6,20 @@ import './style.css'
 
 const BookDetailsComponent = ({ number }) => {
     const navigate = useNavigate();
+    // get id from url
     const { id } = useParams();
     const [data, setData] = useState();
 
     useEffect(() => {
         if (id) {
+            // gets data by book id
             getBooksDataByID(id, (data) => {
                 setData(data);
             })
         }
     }, [id]);
 
+    //navigate back to home page 
     const backButton = () => {
         navigate("/");
     }
