@@ -1,22 +1,20 @@
 import React from "react";
 import { subscriber } from './../../utils/subscriber';
+import { Link } from "react-router-dom";
 import './style.css';
-import { getBooksDataByID } from './../../api'
 
-export default function BookComponent({id, volumeInfo, accessInfo}) {
+export default function BookComponent({ id, volumeInfo }) {
     //cards destructed data
-    const { authors, categories, title, imageLinks, industryIdentifiers } = volumeInfo;
+    const { authors, title, imageLinks, industryIdentifiers } = volumeInfo;
 
-    
     // passes the link 
-    const clickOnButton = (link) => {
-        subscriber.clickOnButton(link)
-        
-        console.log(industryIdentifiers.identifier, "8888888888888888888")
-        console.log(id, "8888888888888888888")
-        getBooksDataByID(id, (data) => {
-            console.log(data)
-        })
+    const clickOnButton = (number) => {
+        subscriber.clickOnButton(number)
+    }
+
+
+    const truncate = (str, length, cut) => {
+        return str.length > length ? str.substring(0, cut) + "..." : str;
     }
 
     return (
@@ -34,14 +32,14 @@ export default function BookComponent({id, volumeInfo, accessInfo}) {
                     :
                     <div className="bookimg">book is not provided</div>
                 }
-                <button type="button" onClick={()=>{clickOnButton(accessInfo.webReaderLink)}} className="btnaddtowishlist">
-                    <span>Read a book</span>
-                </button>
+                <Link to={id}>
+                    <button type="button" onClick={() => { clickOnButton(industryIdentifiers[0].identifier) }} className="btnaddtowishlist">
+                        <span>Read a book</span>
+                    </button>
+                </Link>
             </div>
-            <p>{categories ? categories.join("") : null}</p>
-            <hr />
-            <h6>{title}</h6>
-            {authors ? <i> by: { authors }</i>: null}
+            <h6>{truncate(title, 20, 18)}</h6>
+            {authors ? <i> by: {truncate(authors.join(""), 20, 18)}</i> : null}
         </div>
     )
 }

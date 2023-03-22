@@ -26,13 +26,15 @@ const BookViewer = ({number}) => {
         else {
             if (window.viewer) {
                 let viewer = new window.google.books.DefaultViewer(canvasRef.current);
-                viewer.load('ISBN:' + ISBN_num, alertNotFound);
+                // viewer.load('ISBN:' + ISBN_num, alertNotFound);
+                viewer.load(ISBN_num, alertNotFound);
             } else {
                 window.google.books.load()
                 window.google.books.setOnLoadCallback(() => {
                     let viewer = new window.google.books.DefaultViewer(canvasRef.current);
                     window.viewer = viewer
-                    viewer.load('ISBN:' + ISBN_num, alertNotFound);
+                    // viewer.load('ISBN:' + ISBN_num, alertNotFound);
+                    viewer.load(ISBN_num, alertNotFound);
                 })
             }
         }

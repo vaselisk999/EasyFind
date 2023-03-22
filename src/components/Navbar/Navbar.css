@@ -6,29 +6,37 @@
 }
 
 :root {
-	--mainColor: #29335c;
+	--mainColor: #855100;
 	--mainColorLight: #5767aa;
-	--secondaryColor: #db2b39;
-	--textColor: #eee;
+	--secondaryColor: #f16945;
+	--textColorDisplay: #5a5a5a;
+	--textColor: #fff;
 }
 
 header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	height: 50px;
+	height: 70px;
 	padding: 0 2rem;
-	background-color: var(--mainColor);
+	border-bottom: var(--mainColor) 2px solid;
 	color: var(--textColor);
+	background-color: #E7D8AC;
+}
+
+.nav-logo{
+	width: 80px;
+	height: auto;
 }
 
 .nav-link {
 	margin: 0 1rem;
-	color: var(--textColor);
+	color: var(--textColorDisplay);
 	text-decoration: none;
 }
+
 .nav-link:hover {
-	color: var(--secondaryColor);
+	color: var(--secondaryColor) !important;
 }
 
 header .nav-btn {
@@ -47,6 +55,16 @@ header div,
 nav {
 	display: flex;
 	align-items: center;
+}
+
+@media only screen and (min-width: 1025px) {
+	header .responsive_nav {
+		color: var(--textColorDisplay);
+	}
+
+	nav .nav-link {
+		color: var(--textColorDisplay);
+	}
 }
 
 @media only screen and (max-width: 1024px) {
@@ -68,10 +86,12 @@ nav {
 		gap: 1.5rem;
 		background-color: var(--mainColor);
 		transition: 1s;
+		z-index: 100;
 	}
 
 	header .responsive_nav {
 		transform: translateY(100vh);
+		color: var(--textColor);
 	}
 
 	nav .nav-close-btn {
@@ -82,5 +102,6 @@ nav {
 
 	nav .nav-link {
 		font-size: 1.5rem;
+		color: var(--textColor);
 	}
 }

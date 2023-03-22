@@ -21,36 +21,29 @@ const spanStyle = {
     alignItems: 'center',
     justifyContent: 'center',
     backgroundSize: 'cover',
+    backgroundPosition: "center",
     height: '400px',
-    // borderRadius: '8px',
-    // marginTop: '15px'
   }
 
 const images = [
   {
     img: image1,
-    caption: "Slide One",
   },
   {
     img: image2,
-    caption: "Slide Two",
   },
   {
     img: image3,
-    caption: "Slide Three",
   },
   {
     img: image4,
-    caption: "Slide Four",
   },
 
   {
    img: image5,
-    caption: "Slide Five",
   },
   {
     img: image6,
-    caption: "Slide Six",
   }
 ];
 
@@ -62,7 +55,6 @@ const Slideshow = () => {
          {images.map((image, index)=> (
             <div key={index}>
               <div style={{ ...divStyle, 'backgroundImage': `url(${image.img})` }}>
-                <span style={spanStyle}>{image.caption}</span>
               </div>
             </div>
           ))} 
