@@ -10,17 +10,15 @@ const BookDetailsComponent = ({number}) => {
     const [data, setData] = useState();
 
     useEffect(() => {
-        getBookDetales();
-    },[]);
+        if(id){
+            getBooksDataByID(id, (data) => {
+                setData(data);
+            })
+        }
+    },[id]);
 
     const backButton = () => {
         navigate("/");
-    }
-
-    const getBookDetales = () => {
-        getBooksDataByID(id, (data) => {
-            setData(data);
-        })
     }
 
     return (

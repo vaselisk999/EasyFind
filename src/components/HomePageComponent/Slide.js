@@ -9,21 +9,14 @@ import image5 from "./../../assets/images/slider/book5.png";
 import image6 from "./../../assets/images/slider/book6.png";
 
 
-const spanStyle = {
-    padding: '20px',
-    background: '#efefef',
-    borderRadius: '8px',
-    color: '#000000'
-  }
-  
-  const divStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundSize: 'cover',
-    backgroundPosition: "center",
-    height: '400px',
-  }
+const divStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  backgroundSize: 'cover',
+  backgroundPosition: "center",
+  height: '400px',
+}
 
 const images = [
   {
@@ -40,7 +33,7 @@ const images = [
   },
 
   {
-   img: image5,
+    img: image5,
   },
   {
     img: image6,
@@ -48,18 +41,18 @@ const images = [
 ];
 
 const Slideshow = () => {
-    
+
   return (
     <div className="slide-container">
-        <Slide>
-         {images.map((image, index)=> (
-            <div key={index}>
-              <div style={{ ...divStyle, 'backgroundImage': `url(${image.img})` }}>
-              </div>
+      <Slide>
+        {images.map((image, index) => (
+          <div key={index}>
+            <div style={{ ...divStyle, 'backgroundImage': `url(${image.img})` }}>
             </div>
-          ))} 
-        </Slide>
-      </div>
+          </div>
+        ))}
+      </Slide>
+    </div>
   );
 };
 
