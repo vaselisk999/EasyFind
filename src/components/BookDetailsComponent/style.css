@@ -1,16 +1,14 @@
 
 .modal-book-info-wrapper{
-    width: calc( 100vw - 700px);
+    width: calc( 110% - 700px);
     background-color: white;
+    text-align: left;
+    padding: 10px;
+   
 }
 
 .modal-book-viewer-wrapper{
     background-color: white;
+    padding: 0 !important;
 }
 
-.modal-background {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-}

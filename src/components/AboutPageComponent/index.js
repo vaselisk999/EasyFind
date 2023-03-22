@@ -2,9 +2,9 @@ import React from "react";
 
 const AboutPageComponent = () => {
   return (
-    <div className="container-sm">
-      <div className="row align-items-start align-self-center">
-        <div className="col-8">
+    <div className="container">
+      <div className="row align-self-center">
+        <div className="">
           <h2 className="header-title text-capitalize mt-4">
             About Page find your book of choice.
           </h2>
