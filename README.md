@@ -59,3 +59,9 @@ Builds the app for production to the `build` folder.
 * The URL of the GitHub repository. [Repository link](https://github.com/vaselisk999/EasyFind).
 
 * The URL of the deployed application. [Repository link](https://easyfindbook.netlify.app/).
+
+## Team Members
+
+Zodumo Mbuthuma,
+Artur Karpenko,
+Ahmed Sharif Mahamed
